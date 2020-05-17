@@ -1,0 +1,15 @@
+package com.lgs.lab.interface1;
+
+public interface Numerable extends Plus, Minus, Multiply, Devide {
+    @Override
+    int plus(int a, int b);
+
+    @Override
+    int minus(int a, int b);
+
+    @Override
+    double devide(double a, double b);
+
+    @Override
+    int multiple(int a, int b);
+}
