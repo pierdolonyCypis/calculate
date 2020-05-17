@@ -1,0 +1,70 @@
+package com.lgs.lab.interface2;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        MyCalculator calculator = new MyCalculator();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Калькулятор");
+        System.out.println("\nВведіть 2 числа для обчислення");
+        int inputNumber = sc.nextInt();
+        int inputNumber2 = sc.nextInt();
+
+        while (true) {
+            System.out.println("\nЗробіть свій вибір\n");
+            System.out.println("1: додати ");
+            System.out.println("2: відняти ");
+            System.out.println("3: помножити");
+            System.out.println("4: поділити");
+            System.out.println("5: змінити данні");
+            System.out.println("0: вихід з програми");
+            int input = sc.nextInt();
+            switch (input) {
+                case 1: {
+                    System.out.println("-------------------------\n результат додавання: "+
+                            calculator.plus(inputNumber, inputNumber2)
+                            +"\n-------------------------");
+                    break;
+                }
+                case 2: {
+                    System.out.println("-------------------------\n результат віднімання: "+
+                            calculator.minus(inputNumber, inputNumber2)
+                            +"\n-------------------------");
+                    break;
+                }
+                case 3: {
+                    System.out.println("-------------------------\n результат множення: "+
+                            calculator.multiple(inputNumber, inputNumber2)
+                            +"\n-------------------------");
+                    break;
+                }
+                case 4: {
+                    System.out.printf("-------------------------\n результат ділення: " +
+                            " %.2f\n-------------------------"
+                            ,calculator.devide(inputNumber, inputNumber2));
+                    break;
+                }
+                case 5: {
+                    System.out.println("\nВведіть 2 числа для обчислення");
+                    inputNumber = sc.nextInt();
+                    inputNumber2 = sc.nextInt();
+                    break;
+                }
+
+               case 0: {
+                   System.exit(0);
+               }
+             default: {
+                  System.out.println("Не правильні дані!");
+                     }
+                }
+            }
+        }
+    }
+
+
+
+
